@@ -31,6 +31,20 @@ var subRoutes = [
         }
     },
     {
+        path: 'demo',
+        getComponent: function (nextState, cb) {
+            require.ensure([], function (require) {
+                cb(null, require('./page/demo/demo.jsx'));
+            }, 'demo');
+        },
+        onEnter: function () {
+            
+        },
+        onLeave: function () {
+
+        }
+    },
+    {
         path: '*',
         onEnter: function (nextState, replace) {
             // 如果是其他路由则跳转到首页

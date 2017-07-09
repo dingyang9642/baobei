@@ -31,7 +31,7 @@ var headerComponent = React.createClass({
     render: function() {
         return (
             <div className='header-box'>
-
+                 i am the header part
             </div>
         );
     }

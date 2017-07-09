@@ -91,7 +91,7 @@
 /******/ 		if (__webpack_require__.nc) {
 /******/ 			script.setAttribute("nonce", __webpack_require__.nc);
 /******/ 		}
-/******/ 		script.src = __webpack_require__.p + "assets/demo-test/" + ({"0":"home","1":"detail","2":"app"}[chunkId]||chunkId) + ".chunk.js?" + "425c99027ab0620ab8ad" + "";
+/******/ 		script.src = __webpack_require__.p + "assets/demo-test/" + ({"0":"home","1":"detail","2":"app"}[chunkId]||chunkId) + ".chunk.js?" + "cec04ffefc9a778999b7" + "";
 /******/ 		var timeout = setTimeout(onScriptComplete, 120000);
 /******/ 		script.onerror = script.onload = onScriptComplete;
 /******/ 		function onScriptComplete() {
