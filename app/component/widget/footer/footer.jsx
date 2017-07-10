@@ -16,7 +16,7 @@ var footerComponent = React.createClass({
     render: function() {
         return (
             <div className="footer-box">
-                I am footer part....weweweweweeeeeee
+                
             </div>
         );
     }

@@ -4,8 +4,8 @@ const webpack = require('webpack');
 const HtmlwebpackPlugin = require('html-webpack-plugin');  // 生成html文件
 
 /****项目相关配置(app-config)****/
-const APP_NAME_EN = 'demo-test';
-const APP_NAME_CN = '演示demo';
+const APP_NAME_EN = 'xinxi';
+const APP_NAME_CN = '便民服务网';
 const APP_ASSETS = 'assets/' + APP_NAME_EN;
 const APP_TEMPLATE = 'template/' + APP_NAME_EN;
 

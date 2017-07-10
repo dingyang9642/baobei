@@ -8,8 +8,8 @@ console.log('server start');
 
 /******************demo【start】************************/
 // 1、常规mock get
-var demo1 = require('./mock/home/home.json');
-var demo2 = require('./mock/detail/detail.json');
+var demo1 = require('./mock/bianmin.json');
+
 // 1.1 get方式
 app.get('/prefix/demo1', function (req, res) {
     res.send(demo1);
@@ -30,7 +30,7 @@ app.get('/prefix/demo3', function (req, res) {
         res.send(demo1);
     }
     else {
-        res.send(demo2);
+        res.send(demo1);
     }
 });
 /******************demoo【end】************************/

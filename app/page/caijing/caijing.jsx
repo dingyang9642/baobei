@@ -1,11 +1,11 @@
 /**
- * @file 首页
+ * @file 财经
  * @author dingyang(dingyang9642@126.com)
  */
 
 var React = require('react');
 var commonPageStyle = require('../../component/widget/common/common.css');
-var homePageStyle = require('./home.useable.css');
+var caijingPageStyle = require('./caijing.useable.css');
 
 // 首页顶部标题栏部分
 var HeaderElement = require('../../component/widget/header/header.jsx');
@@ -14,26 +14,26 @@ var ContentElement = require('./content/content.jsx');
 // 首页底部状态栏部分
 var FooterElement = require('../../component/widget/footer/footer.jsx');
 
-var homeComponent = React.createClass({
+var caijingComponent = React.createClass({
 	getInitialState: function() {
 		return {
 
 		};
 	},
 	componentWillMount: function () {
-        homePageStyle.use();
+        caijingPageStyle.use();
     },
     componentWillUnmount: function() {
-        homePageStyle.unuse();
+        caijingPageStyle.unuse();
     },
     render: function() {
         return (
-            <div className="home-box">
-                <HeaderElement title='home'/>
+            <div className="caijing-box">
+                <HeaderElement/>
                 <ContentElement/>
                 <FooterElement/>
             </div>
         );
     }
 });
-module.exports = homeComponent;
+module.exports = caijingComponent;

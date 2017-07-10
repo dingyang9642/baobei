@@ -1,6 +1,16 @@
-.header-box {
-	display: -webkit-flex;
-    display: flex;
-    height: 100px;
-    background-color: pink;
+.header-items {
+    height: .88rem;
+    line-height: .88rem;
+    background-color: #f4f5f6;
+}
+.header-item {
+	float: left;
+	width: 25%;
+    list-style-type: none;
+    text-align: center;
+    color: #333;
+    font-size: .28rem;
+}
+.header-item-selected {
+    color: #f85959;
 }

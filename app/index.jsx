@@ -17,11 +17,53 @@ var App = React.createClass({
 
 var subRoutes = [
     {
-        path: 'detail',
+        path: 'bianmin',
         getComponent: function (nextState, cb) {
             require.ensure([], function (require) {
-                cb(null, require('./page/detail/detail.jsx'));
-            }, 'detail');
+                cb(null, require('./page/bianmin/bianmin.jsx'));
+            }, 'bianmin');
+        },
+        onEnter: function () {
+            
+        },
+        onLeave: function () {
+
+        }
+    },
+    {
+        path: 'caijing',
+        getComponent: function (nextState, cb) {
+            require.ensure([], function (require) {
+                cb(null, require('./page/caijing/caijing.jsx'));
+            }, 'caijing');
+        },
+        onEnter: function () {
+            
+        },
+        onLeave: function () {
+
+        }
+    },
+    {
+        path: 'shipin',
+        getComponent: function (nextState, cb) {
+            require.ensure([], function (require) {
+                cb(null, require('./page/shipin/shipin.jsx'));
+            }, 'shipin');
+        },
+        onEnter: function () {
+            
+        },
+        onLeave: function () {
+
+        }
+    },
+    {
+        path: 'lvtu',
+        getComponent: function (nextState, cb) {
+            require.ensure([], function (require) {
+                cb(null, require('./page/lvtu/lvtu.jsx'));
+            }, 'lvtu');
         },
         onEnter: function () {
             
@@ -60,8 +102,8 @@ var RootRoute = {
         indexRoute: {
             getComponent: function (nextState, cb) {
                 require.ensure([], function (require) {
-                    cb(null, require('./page/home/home.jsx'));
-                }, 'home');
+                    cb(null, require('./page/bianmin/bianmin.jsx'));
+                }, 'bianmin');
             },
         },
         childRoutes: subRoutes

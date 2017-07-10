@@ -1,5 +1,5 @@
 const GLOBAL_CONFIG = {
-    projectName: 'demo'
+    projectName: 'i'
 };
 
 module.exports = GLOBAL_CONFIG;
