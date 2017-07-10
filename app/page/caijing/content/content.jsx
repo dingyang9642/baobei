@@ -16,7 +16,7 @@ var contentComponent = React.createClass({
     render: function() {
         return (
             <div className="content-box">
-                <div></div>
+                <div>财经板块[敬请期待...]</div>
             </div>
         );
     }
