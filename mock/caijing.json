@@ -1,0 +1,39 @@
+{
+	"resultCode": "0",
+	"resultMsg": "",
+	"result": {
+		"articles": [
+            {
+            	"type": "0",
+            	"imgSize": "normal",
+            	"title": "中华人民共和国万岁，世界人民大团结万岁",
+            	"images": ["https://p3.pstatp.com/list/2c3e0004849e77d98d31"]
+            }, {
+            	"type": "1",
+            	"imgSize": "big",
+            	"title": "",
+            	"images": ["https://p3.pstatp.com/list/2c3e0004849e77d98d31"]
+            }, {
+            	"type": "0",
+            	"imgSize": "normal",
+            	"title": "",
+            	"images": ["https://p3.pstatp.com/list/2c3e0004849e77d98d31"]
+            }, {
+            	"type": "1",
+            	"imgSize": "big",
+            	"title": "",
+            	"images": ["https://p3.pstatp.com/list/2c3e0004849e77d98d31"]
+            }, {
+            	"type": "1",
+            	"imgSize": "big",
+            	"title": "",
+            	"images": ["https://p3.pstatp.com/list/2c3e0004849e77d98d31"]
+            }
+		],
+		"paginator": {
+			"pageNum": 1,
+			"pageSize": 5,
+			"totalCount": 10
+		}
+	}
+}

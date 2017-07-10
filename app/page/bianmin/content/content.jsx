@@ -13,10 +13,28 @@ var contentComponent = React.createClass({
     componentWillUnmount: function() {
         contentPageStyle.unuse();
     },
+    /**
+     * 获取小工具列表
+     * @Author   dingyang   [dingyang@baidu.com]
+     * @DateTime 2017-07-10
+     * @return   {[type]}   [description]
+     */
+    getBianminItems: function() {
+        return [
+            {
+                id: '1',
+                icon: '',
+                name: ''
+            }
+        ];
+    },
+
     render: function() {
         return (
             <div className="content-box">
-                <div>便民服务中心[敬请期待...]</div>
+                <ul className="bianmin-items">
+                    <div>便民小工具板块[敬请期待...]</div>
+                </ul>
             </div>
         );
     }
