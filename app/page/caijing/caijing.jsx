@@ -29,7 +29,7 @@ var caijingComponent = React.createClass({
     render: function() {
         return (
             <div className="caijing-box">
-                <HeaderElement/>
+                <HeaderElement selectedItem="caijing"/>
                 <ContentElement/>
                 <FooterElement/>
             </div>

@@ -29,7 +29,7 @@ var bianminComponent = React.createClass({
     render: function() {
         return (
             <div className="bianmin-box">
-                <HeaderElement/>
+                <HeaderElement selectedItem="bianmin"/>
                 <ContentElement/>
                 <FooterElement/>
             </div>

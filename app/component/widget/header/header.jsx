@@ -1,6 +1,8 @@
 var React = require('react');
 var headerPageStyle = require('./header.useable.css');
+var GLOBAL_CONFIG = require('../../../conf/conf.js');
 var browserHistory = require('react-router/lib/browserHistory');
+var projectName = GLOBAL_CONFIG.projectName;
 
 var headerComponent = React.createClass({
 	getInitialState: function() {
@@ -10,7 +12,7 @@ var headerComponent = React.createClass({
 	},
     getDefaultProps : function () {
         return {
-            
+            selectedItem: 'bianmin' // 设置默认选中项,同state中保持一致
         };
     },
 	componentWillMount: function () {
@@ -18,6 +20,9 @@ var headerComponent = React.createClass({
     },
     componentWillUnmount: function() {
         headerPageStyle.unuse();
+    },
+    componentDidMount: function () {
+        this.setDefaultSelectedItem();
     },
     /**
      * 获取菜单栏列表list
@@ -41,10 +46,21 @@ var headerComponent = React.createClass({
     handleMenuItemClick: function(itemEnName) {
         var selectedItem = this.state.selectedItem;
         if (itemEnName === selectedItem) {return;}
+        var locationPathName = (itemEnName === 'bianmin') ? ('/' + projectName) : ('/' + projectName + '/' + itemEnName);
+        browserHistory.replace(locationPathName);
+    },
+    /**
+     * 根据不同页面传入参数产出默认选中项
+     * @Author   dingyang   [dingyang@baidu.com]
+     * @DateTime 2017-07-10
+     */
+    setDefaultSelectedItem: function() {
+        var selectedItem = this.props.selectedItem;
         this.setState({
-            selectedItem: itemEnName
+            selectedItem: selectedItem
         });
     },
+
     render: function() {
         var self = this;
         var menuItems = this.getMenuList();

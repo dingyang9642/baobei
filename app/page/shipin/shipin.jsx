@@ -29,7 +29,7 @@ var shipinComponent = React.createClass({
     render: function() {
         return (
             <div className="shipin-box">
-                <HeaderElement/>
+                <HeaderElement selectedItem="shipin"/>
                 <ContentElement/>
                 <FooterElement/>
             </div>

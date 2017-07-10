@@ -29,7 +29,7 @@ var lvtuComponent = React.createClass({
     render: function() {
         return (
             <div className="lvtu-box">
-                <HeaderElement/>
+                <HeaderElement selectedItem="lvtu"/>
                 <ContentElement/>
                 <FooterElement/>
             </div>
