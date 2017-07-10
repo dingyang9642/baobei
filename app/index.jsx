@@ -17,20 +17,6 @@ var App = React.createClass({
 
 var subRoutes = [
     {
-        path: 'bianmin',
-        getComponent: function (nextState, cb) {
-            require.ensure([], function (require) {
-                cb(null, require('./page/bianmin/bianmin.jsx'));
-            }, 'bianmin');
-        },
-        onEnter: function () {
-            
-        },
-        onLeave: function () {
-
-        }
-    },
-    {
         path: 'caijing',
         getComponent: function (nextState, cb) {
             require.ensure([], function (require) {
