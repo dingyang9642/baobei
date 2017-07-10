@@ -71,5 +71,10 @@ module.exports = {
             filename: APP_ASSETS + '/commons.js?[hash]',
             minChunks: 2 // 检测被引用两次即被抽离出来
         }),
+        new webpack.optimize.UglifyJsPlugin({
+            compress: {
+                warnings: false
+            }
+        })
     ]
 };
