@@ -24,16 +24,37 @@ var contentComponent = React.createClass({
             {
                 id: '1',
                 icon: '',
-                name: ''
+                name: '公积金',
+                url: '//m.anjuke.com'
+            },
+            {
+                id: '2',
+                icon: '',
+                name: '公租房',
+                url: ''
+            },
+            {
+                id: '3',
+                icon: '',
+                name: '税后工资计算',
+                url: ''
             }
         ];
     },
 
     render: function() {
+        var self = this;
+        var items = this.getBianminItems();
         return (
             <div className="content-box">
                 <ul className="bianmin-items">
-                    <div>便民小工具板块[敬请期待...]</div>
+                    {
+                        items.map(function (item, index){
+                            return (<li className="bianmin-item" key={index}>
+                                <a href={item.url} >{item.name}</a>
+                            </li>)
+                        })
+                    }
                 </ul>
             </div>
         );

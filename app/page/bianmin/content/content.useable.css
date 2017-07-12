@@ -1,5 +1,47 @@
 .content-box {
     font-size: .3rem;
-    text-align: center;
-    margin-top: .5rem;
+    color: #333;
+    padding: .4rem;
+}
+.content-box .bianmin-item{
+	 border: 1px solid #ccc;
+	 display: -webkit-box;
+	 display: box;
+	 margin-bottom: .3rem;
+}
+.content-box .bianmin-item a{
+	position: relative;
+	display: block;
+	-webkit-box-flex: 1;
+	box-sizing: border-box;
+	padding-left: .3rem;
+	line-height: 1rem;
+	font-size: .4rem;
+	font-weight: 700;
+	color: #333;
+	text-decoration: none;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	background-color: #f9f9f9;
+	text-align: center;
+}
+.content-box .bianmin-item a:active{
+	color: #f60;
+	background-color: #f9f9f9;
+}
+/*.content-box .bianmin-item a:visited{
+	color: #f60;
+	background-color: #f9f9f9;
+}*/
+.content-box .bianmin-item a:after{
+	content:'';
+	position: absolute;
+	top: .3rem;
+	right: .2rem;
+	width: .4rem;
+	height: .4rem;
+	border-top: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+	transform: rotate(45deg);
 }
