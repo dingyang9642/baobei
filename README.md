@@ -2,27 +2,31 @@
 ```
     --app
       --component
-        --common
-        --content
-        --widget
+        --公共组件
+      --conf
+        --项目配置文件
       --page
         --页面模块
       --index.html
       --index.jsx
     --mock
+      --模拟数据
+    --mock.js
+      --mockServer代理服务
+    --webpack.config.js
+      --webpack编译脚本文件
+    --output
+      --发布目录
 ```
  
 ###二、发布目录结构
 ```
-webroot
+output
     ——assets
-      —-htcx
+      —-项目名
         --js
-          --.js
-        --img
-          --.png/jpg
     ——tempalte 
-      --htcx
+      --项目名
         --index.html
 ```
 
