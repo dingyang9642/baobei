@@ -63,9 +63,6 @@ module.exports = {
             },
             adaptive: adaptiveText
         }),
-        new webpack.ProvidePlugin({
-           "$": "zepto"
-        }),
         new webpack.optimize.CommonsChunkPlugin({
             name: 'commons',
             filename: APP_ASSETS + '/commons.js?[hash]',
@@ -80,6 +77,9 @@ module.exports = {
             "process.env": { 
                 NODE_ENV: JSON.stringify("production") 
             }
+        }),
+        new webpack.ProvidePlugin({
+           "$": "zepto"
         })
     ]
 };

@@ -7,8 +7,9 @@ const HtmlwebpackPlugin = require('html-webpack-plugin');  // 生成html文件
 const APP_NAME_EN = 'xinxi';
 const APP_NAME_CN = '便民服务网';
 const PROXY_CONFIG = {  // api匹配规则配置
-    '/prefix/**': {
-        target: 'http://127.0.0.1:8888',
+    '/api/*': {
+        target: 'http://www.womaishu.cn',
+        changeOrigin: true,
         secure: false
     }
 };
@@ -76,13 +77,13 @@ module.exports = {
             },
             adaptive: adaptiveText
         }),
-        new webpack.ProvidePlugin({
-           "$": "zepto"
-        }),
         new webpack.optimize.CommonsChunkPlugin({
             name: 'commons',
             filename: 'commons.js?[hash]',
             minChunks: 2 // 检测被引用两次即被抽离出来
         }),
+        new webpack.ProvidePlugin({
+           "$": "webpack-zepto"
+        })
     ]
 };
