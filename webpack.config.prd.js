@@ -79,7 +79,7 @@ module.exports = {
             }
         }),
         new webpack.ProvidePlugin({
-           "$": "zepto"
+           "$": "webpack-zepto"
         })
     ]
 };
