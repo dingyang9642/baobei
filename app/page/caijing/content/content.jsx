@@ -1,5 +1,6 @@
 var React = require('react');
 var GLOBAL_CONFIG = require('../../../conf/conf.js');
+var UtilTools = require('../../../component/widget/util/util.jsx');
 var contentPageStyle = require('./content.useable.css');
 
 var contentComponent = React.createClass({
@@ -91,7 +92,7 @@ var contentComponent = React.createClass({
                     var articleTitle = item.title;
                     var articleUrl = item.url;
                     var articleThumb = item.thumb_nail;
-                    var articleReleaseTime= (item.release_time) ? item.release_time.split('T')[0] : '';
+                    var articleReleaseTime= (item.release_time) ? UtilTools.formatISODateToLocalString(item.release_time).split(' ')[0] : '';
                     var articleDesc = item.abstract;
                     var articleWXPublicNum = item.wechat_number;
                     return (<div className="article-item" onClick={_this.handleArticleItemClick.bind(_this, articleUrl)} key={index}>
