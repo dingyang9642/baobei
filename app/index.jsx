@@ -73,21 +73,6 @@ var subRoutes = [
         }
     },
     {
-        path: 'bianmin',
-        getComponent: function (nextState, cb) {
-            require.ensure([], function (require) {
-                cb(null, require('./page/bianmin/bianmin.jsx'));
-            }, 'bianmin');
-        },
-        onEnter: function () {
-            
-        },
-        onLeave: function () {
-
-        }
-
-    },
-    {
         path: '*',
         onEnter: function (nextState, replace) {
             // 如果是其他路由则跳转到首页
