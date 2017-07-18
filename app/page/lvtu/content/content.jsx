@@ -88,10 +88,13 @@ var contentComponent = React.createClass({
                 articles.map(function(item, index){
                     var articleTitle = item.title;
                     var articleUrl = item.url;
+                    var articleThumb = item.thumb_nail;
                     var articleDesc = item.abstract;
                     var articleWXPublicNum = item.wechat_number;
                     return (<div className="article-item" onClick={_this.handleArticleItemClick.bind(_this, articleUrl)} key={index}>
-                        <div className="article-item-l"></div>
+                        <div className="article-item-l">
+                            <img className="article-item-l-img" src={articleThumb}/>
+                        </div>
                         <div className="article-item-r">
                             <span className="article-item-title">{articleTitle}</span>
                             <span className="article-item-desc">{articleDesc}</span>
