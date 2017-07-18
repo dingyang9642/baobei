@@ -95,7 +95,7 @@ var contentComponent = React.createClass({
                     var articleWXPublicNum = item.wechat_number;
                     return (<div className="article-item" onClick={_this.handleArticleItemClick.bind(_this, articleUrl)} key={index}>
                         <div className="article-item-l">
-                            <img className="article-item-l-img" src={articleThumb}/>
+                            <img className="article-item-l-img" src={"http://read.html5.qq.com/image?src=forum&q=5&r=0&imgflag=7&imageUrl" + articleThumb}/>
                         </div>
                         <div className="article-item-r">
                             <span className="article-item-title">{articleTitle}</span>
