@@ -89,6 +89,7 @@ var contentComponent = React.createClass({
                     var articleTitle = item.title;
                     var articleUrl = item.url;
                     var articleThumb = item.thumb_nail;
+                    var articleReleaseTime= (item.release_time) ? item.release_time.split('T')[0] : '';
                     var articleDesc = item.abstract;
                     var articleWXPublicNum = item.wechat_number;
                     return (<div className="article-item" onClick={_this.handleArticleItemClick.bind(_this, articleUrl)} key={index}>
@@ -98,7 +99,7 @@ var contentComponent = React.createClass({
                         <div className="article-item-r">
                             <span className="article-item-title">{articleTitle}</span>
                             <span className="article-item-desc">{articleDesc}</span>
-                            <span className="article-item-wx-public-num">{articleWXPublicNum}</span>
+                            <span className="article-item-wx-public-num">{articleWXPublicNum}&nbsp;&nbsp;&nbsp;&nbsp;{articleReleaseTime}</span>
                         </div>
                     </div>);
                 })
