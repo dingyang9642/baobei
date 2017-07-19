@@ -57,6 +57,7 @@ module.exports = {
     },
     devServer: {
         historyApiFallback: true,
+        disableHostCheck: true,
         hot: false,
         inline: true,
         progress: true,

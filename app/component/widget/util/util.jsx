@@ -48,7 +48,7 @@ var Util = {
         return totalArr;
     },
     formatISODateToLocalString: function(isodate) {
-        var dateString = new Date(isodate).toISOString().replace(/T/g, ' ').replace(/\.[\d]{3}Z/, '')
+        var dateString = new Date(isodate).toISOString().replace(/T/g, ' ').replace(/-/g, '\/').replace(/\.[\d]{3}Z/, '');
         var date = new Date(+new Date(dateString) + 8 * 3600 * 1000);
         var result = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate() + ' ' + date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds();
         return result;
