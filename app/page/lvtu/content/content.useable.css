@@ -48,3 +48,10 @@
     align-items: center;
     line-height: 1.1;
 }
+.articles-loadmore {
+    padding: .2rem 0;
+    text-align: center;
+    font-size: .26rem;
+}
+
+

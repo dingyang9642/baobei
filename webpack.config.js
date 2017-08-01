@@ -8,7 +8,7 @@ const APP_NAME_EN = 'xinxi';
 const APP_NAME_CN = '便民服务网';
 const PROXY_CONFIG = {  // api匹配规则配置
     '/api/*': {
-        target: 'http://www.womaishu.cn',
+        target: 'http://106.12.11.99',
         changeOrigin: true,
         secure: false
     }

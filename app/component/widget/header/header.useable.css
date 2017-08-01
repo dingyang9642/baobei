@@ -1,7 +1,15 @@
-.header-items {
+.menu-box, .menu-box-bg {
     height: .88rem;
     line-height: .88rem;
+}
+.menu-box {
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+}
+.header-items {
     background-color: #f4f5f6;
+    overflow: hidden;
 }
 .header-item {
 	float: left;

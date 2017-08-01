@@ -6,15 +6,22 @@ var contentPageStyle = require('./content.useable.css');
 var contentComponent = React.createClass({
 	getInitialState: function() {
 		return {
-            articles: []
+            articles: [],
+            loadMoreText: '小主，正在努力加载中...' //页面底部‘加载更多文案’
 		};
 	},
 	componentWillMount: function () {
         contentPageStyle.use();
-        this.getArticles(1); // 初始化获取第一页数据
+        this.isInRequesting = false;
+        this.isHasMoreArticles = true;
+        this.initPageNum = 1;
+        this.getArticles(this.initPageNum); // 初始化获取第一页数据
     },
     componentWillUnmount: function() {
         contentPageStyle.unuse();
+    },
+    componentDidMount: function() {
+        this.initWindowScrollEvent();
     },
     /**
      * 获取文章
@@ -24,6 +31,8 @@ var contentComponent = React.createClass({
      */
     getArticles: function(pageNum) {
         var _this = this;
+        if(_this.isInRequesting) return;
+        _this.isInRequesting = true;
         $.ajax({
             type: 'GET',
             url: GLOBAL_CONFIG.requestUrl.wxArticleUrl,
@@ -38,6 +47,9 @@ var contentComponent = React.createClass({
             },
             error: function(xhr, type) {
                 
+            },
+            complete: function(xhr, status) {
+                _this.isInRequesting = false;
             }
         })
     },
@@ -53,11 +65,13 @@ var contentComponent = React.createClass({
         var _this = this;
         if (data.resultCode === '0') {
             var articles = data.result.articles;
+            var pagination = data.result.pagination;
             _this.setState({
                 articles: _this.state.articles.concat(articles)
             });
+            _this.handleLoadMoreTips(pagination);
         } else {
-
+            
         }
     },
     /**
@@ -68,6 +82,44 @@ var contentComponent = React.createClass({
      */
     handleArticleResultError: function() {
 
+    },
+
+    handleLoadMoreTips: function(pagination) {
+        var _this = this;
+        var pageNum = pagination.pageNum;
+        var pageSize = pagination.pageSize;
+        var totalCount = pagination.totalCount;
+        var maxPage = Math.ceil(totalCount / pageSize);
+        if (pageNum == maxPage) {
+            _this.isHasMoreArticles = false;
+            _this.setState({
+                loadMoreText: '小主，没有更多文章啦'
+            });            
+        } else {
+            _this.setState({
+                loadMoreText: '小主，Go Go Go...'
+            });
+        }
+    },
+
+    initWindowScrollEvent: function() {
+        var _this = this;
+        _this.loadMoreTimer = null;
+        window.addEventListener('scroll', function() {
+            if(_this.loadMoreTimer) {
+                clearTimeout(_this.loadMoreTimer);
+            }
+            _this.loadMoreTimer = setTimeout(function(){
+                var scrollDoc = document.body;
+                var scrollTop = scrollDoc.scrollTop,
+                    scrollHeight = scrollDoc.scrollHeight,
+                    windowHeight = document.documentElement.clientHeight;
+                if((scrollTop + windowHeight + 60) >= scrollHeight && _this.isHasMoreArticles) {
+                    _this.initPageNum++;
+                    _this.getArticles(_this.initPageNum); // 初始化获取第一页数据
+                }
+            }, 300);
+        });
     },
 
     /**
@@ -84,6 +136,7 @@ var contentComponent = React.createClass({
     render: function() {
         var _this = this;
         var articles = _this.state.articles;
+        var loadMoreText = _this.state.loadMoreText;
         return ( < div className = "content-box" >
             <div className = "articles-container">{
                 articles.map(function(item, index){
@@ -105,6 +158,7 @@ var contentComponent = React.createClass({
                     </div>);
                 })
             }</div>
+            <div className="articles-loadmore">{loadMoreText}</div>
             < /div>
         );
     }

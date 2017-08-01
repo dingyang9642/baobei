@@ -67,16 +67,19 @@ var headerComponent = React.createClass({
         var selectedItem = this.state.selectedItem;
         return (
             <section className='header-box'>
-                <ul className='header-items'>
-                    {
-                        menuItems.map(function(menuItem, index) {
-                            var itemEnName = menuItem.enName;
-                            var itemCnName = menuItem.cnName;
-                            var itemSelectedClassName = (selectedItem === itemEnName) ? 'header-item-selected' : '';
-                            return (<li onClick={self.handleMenuItemClick.bind(self, itemEnName)} key={index} className={'header-item item-' + itemEnName + ' ' + itemSelectedClassName}>{itemCnName}</li>)
-                        })
-                    }
-                </ul>
+                <section className='menu-box'>
+                    <ul className='header-items'>
+                        {
+                            menuItems.map(function(menuItem, index) {
+                                var itemEnName = menuItem.enName;
+                                var itemCnName = menuItem.cnName;
+                                var itemSelectedClassName = (selectedItem === itemEnName) ? 'header-item-selected' : '';
+                                return (<li onClick={self.handleMenuItemClick.bind(self, itemEnName)} key={index} className={'header-item item-' + itemEnName + ' ' + itemSelectedClassName}>{itemCnName}</li>)
+                            })
+                        }
+                    </ul>
+                </section>
+                <section className='menu-box-bg'></section>
             </section>
         );
     }
