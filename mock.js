@@ -7,7 +7,7 @@ app.listen(8888);
 console.log('server start');
 
 /******************demo【start】************************/
-// 1、常规mock get
+// 1、常规mock get ceshi
 var demo1 = require('./mock/bianmin.json');
 
 // 1.1 get方式

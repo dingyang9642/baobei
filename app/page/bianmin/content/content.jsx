@@ -15,7 +15,7 @@ var contentComponent = React.createClass({
     },
     /**
      * 获取小工具列表
-     * @Author   dingyang   [dingyang@baidu.com]
+     * @Author   dingyang   [dingyang9642@126.com]
      * @DateTime 2017-07-10
      * @return   {[type]}   [description]
      */

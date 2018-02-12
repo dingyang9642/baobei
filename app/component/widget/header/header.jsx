@@ -51,7 +51,7 @@ var headerComponent = React.createClass({
     },
     /**
      * 根据不同页面传入参数产出默认选中项
-     * @Author   dingyang   [dingyang@baidu.com]
+     * @Author   dingyang   [dingyang9642@126.com]
      * @DateTime 2017-07-10
      */
     setDefaultSelectedItem: function() {

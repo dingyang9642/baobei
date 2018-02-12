@@ -25,7 +25,7 @@ var contentComponent = React.createClass({
     },
     /**
      * 获取文章
-     * @Author   dingyang   [dingyang@baidu.com]
+     * @Author   dingyang   [dingyang9642@126.com]
      * @DateTime 2017-07-17
      * @return   {[type]}   [description]
      */
@@ -56,7 +56,7 @@ var contentComponent = React.createClass({
 
     /**
      * 对数据查询结果进行处理
-     * @Author   dingyang   [dingyang@baidu.com]
+     * @Author   dingyang   [dingyang9642@126.com]
      * @DateTime 2017-07-17
      * @param    {[type]}   data                 [description]
      * @return   {[type]}                        [description]
@@ -76,7 +76,7 @@ var contentComponent = React.createClass({
     },
     /**
      * 返回结果异常处理
-     * @Author   dingyang   [dingyang@baidu.com]
+     * @Author   dingyang   [dingyang9642@126.com]
      * @DateTime 2017-07-17
      * @return   {[type]}   [description]
      */
@@ -124,7 +124,7 @@ var contentComponent = React.createClass({
 
     /**
      * 点击每一项条状文章地址
-     * @Author   dingyang   [dingyang@baidu.com]
+     * @Author   dingyang   [dingyang9642@126.com]
      * @DateTime 2017-07-17
      * @param    {[type]}   articleUrl           [description]
      * @return   {[type]}                        [description]
